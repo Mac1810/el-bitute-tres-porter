@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="El Bitute Tres Porter: comida peruana contemporánea en Porter, Texas. Consulta nuestra carta, horarios y reservas por WhatsApp." />
+  <meta name="theme-color" content="#1A1210" />
+  <meta property="og:title" content="El Bitute Tres Porter" />
+  <meta property="og:description" content="Sabores peruanos contemporáneos en Porter, Texas." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇵🇪</text></svg>" />
+
+  <!-- ══ TÍTULO DE LA PÁGINA (edita aquí) ══ -->
+  <title>El Bitute Tres Porter – Comida Peruana Contemporánea</title>
+
+  <!-- Estilos compilados para producción -->
+  <link rel="stylesheet" href="css/tailwind.min.css" />
+
+  <!-- ══ GOOGLE FONTS ══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <!-- ══ ESTILOS PERSONALIZADOS ══ -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="antialiased">
+
+  <!-- ════════════════════════════════════════════
+       BOTÓN FLOTANTE WHATSAPP
+       Cambia el número en el href si es necesario
+       ════════════════════════════════════════════ -->
+  <a id="wa-float"
+     href="https://wa.me/12404912936"
+     target="_blank" rel="noopener noreferrer"
+     aria-label="Contactar por WhatsApp"
+     class="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-body font-bold text-sm px-4 py-3 rounded-full shadow-2xl transition-colors duration-300">
+    <svg class="w-6 h-6 fill-current flex-shrink-0" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- ════════════════════════════════════════════
+       NAVBAR – barra de navegación fija
+       ════════════════════════════════════════════ -->
+  <nav id="navbar" class="fixed top-0 inset-x-0 z-40 py-4 px-5 lg:px-12 flex items-center justify-between bg-transparent">
+
+    <!-- Logo (edita el nombre aquí) -->
+    <a href="#inicio" class="flex flex-col leading-none group">
+      <span class="font-display text-dorado text-xl sm:text-2xl font-bold tracking-wide group-hover:opacity-80 transition-opacity">El Bitute</span>
+      <span class="font-body text-crema text-[10px] sm:text-xs tracking-[0.25em] uppercase">Tres · Porter</span>
+    </a>
+
+    <!-- Links de navegación (escritorio) -->
+    <ul class="hidden md:flex items-center gap-8 font-body text-crema text-sm tracking-wider uppercase">
+      <li><a href="#inicio"   class="nav-link hover:text-dorado transition-colors">Inicio</a></li>
+      <li><a href="#platos"  class="nav-link hover:text-dorado transition-colors">Platos</a></li>
+      <li><a href="#carta"   class="nav-link hover:text-dorado transition-colors">La Carta</a></li>
+      <li><a href="#locacion" class="nav-link hover:text-dorado transition-colors">Locación</a></li>
+    </ul>
+
+    <!-- Botón WhatsApp (escritorio) -->
+    <a href="https://wa.me/12404912936" target="_blank" rel="noopener noreferrer"
+       class="hidden md:flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-body font-bold text-xs px-4 py-2 rounded-full shadow-lg transition-colors duration-300">
+      <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Comunícate con nosotros
+    </a>
+
+    <!-- Botón hamburguesa (móvil) -->
+    <button id="menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden text-crema p-2">
+      <svg id="icon-open"  class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-7 h-7 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </nav>
+
+  <!-- Drawer menú móvil -->
+  <div id="mobile-menu" class="fixed inset-0 z-30 bg-oscuro/95 backdrop-blur-md flex flex-col items-center justify-center gap-10 hidden" aria-hidden="true">
+    <ul class="flex flex-col items-center gap-8 font-display text-crema text-3xl">
+      <li><a href="#inicio"   class="hover:text-dorado transition-colors" onclick="closeMenu()">Inicio</a></li>
+      <li><a href="#platos"  class="hover:text-dorado transition-colors" onclick="closeMenu()">Platos</a></li>
+      <li><a href="#carta"   class="hover:text-dorado transition-colors" onclick="closeMenu()">La Carta</a></li>
+      <li><a href="#locacion" class="hover:text-dorado transition-colors" onclick="closeMenu()">Locación</a></li>
+    </ul>
+    <a href="https://wa.me/12404912936" target="_blank" rel="noopener noreferrer" onclick="closeMenu()"
+       class="flex items-center gap-2 bg-green-500 text-white font-body font-bold px-6 py-3 rounded-full shadow-lg text-lg">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+
+  <!-- ════════════════════════════════════════════
+       HERO – Sección principal
+       Imagen: coloca tu foto en img/hero/hero-principal.jpg
+       ════════════════════════════════════════════ -->
+  <section id="inicio" class="hero-bg relative grain">
+    <div class="hero-overlay absolute inset-0 z-10"></div>
+    <div class="relative z-20 min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+
+      <!-- Línea decorativa superior -->
+      <div class="flex items-center gap-4 mb-6 reveal">
+        <div class="h-px w-12 sm:w-20 bg-dorado/70"></div>
+        <span class="font-body text-dorado text-xs sm:text-sm uppercase tracking-[0.3em]">Porter, Texas</span>
+        <div class="h-px w-12 sm:w-20 bg-dorado/70"></div>
+      </div>
+
+      <!-- ── TÍTULO PRINCIPAL (edita aquí) ── -->
+      <h1 class="font-display text-crema font-black text-5xl sm:text-7xl lg:text-8xl leading-[1.05] max-w-4xl reveal" style="transition-delay:0.1s">
+         BITUTE<br/>
+        <em class="text-rojo not-italic">TRES</em><br/>
+        PORTER
+      </h1>
+
+      <!-- ── SUBTÍTULO (edita aquí) ── -->
+      <p class="font-body text-crema/80 text-lg sm:text-xl max-w-xl mt-6 leading-relaxed reveal" style="transition-delay:0.2s">
+        Sabores que viajan desde Lima hasta tu mesa. Ingredientes frescos, recetas de familia y el alma del Perú en cada plato.
+      </p>
+
+      <!-- Botones CTA -->
+      <div class="flex flex-col sm:flex-row gap-4 mt-10 reveal" style="transition-delay:0.3s">
+        <a href="#carta"
+           class="font-body font-bold uppercase tracking-widest text-sm px-8 py-4 bg-rojo hover:bg-red-700 text-white rounded-2xl shadow-xl transition-all duration-300 hover:scale-105">
+          Ver Menú
+        </a>
+        <a href="https://wa.me/12404912936?text=Hola!%20Quiero%20hacer%20una%20reserva."
+           target="_blank" rel="noopener noreferrer"
+           class="font-body font-bold uppercase tracking-widest text-sm px-8 py-4 border-2 border-dorado text-dorado hover:bg-dorado hover:text-tierra rounded-2xl transition-all duration-300 hover:scale-105">
+          Reservar Mesa
+        </a>
+      </div>
+
+      <!-- Flecha scroll -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 animate-bounce reveal" style="transition-delay:0.5s">
+        <svg class="w-6 h-6 text-dorado/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       PLATOS PRINCIPALES
+       Imágenes: coloca tus fotos en img/platos/
+       Nombres sugeridos: ceviche.jpg, lomo-saltado.jpg, pollo-brasa.jpg
+       ════════════════════════════════════════════ -->
+  <section id="platos" class="bg-crema py-24 px-5 lg:px-16">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-16 reveal">
+        <span class="font-body text-rojo text-xs uppercase tracking-[0.3em] font-bold">Nuestros Favoritos</span>
+        <h2 class="font-display text-tierra font-black text-4xl sm:text-5xl mt-2">Platos Principales</h2>
+        <hr class="gold-rule w-24 mt-6" />
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- ── TARJETA 1: CEVICHE ──
+             Imagen → img/platos/ceviche.jpg -->
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/ceviche.png"
+               alt="Ceviche Clásico"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Estrella de la casa</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Ceviche Clásico</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">El clásico ceviche peruano: fresco, vibrante y simplemente irresistible</p>
+          </div>
+        </div>
+
+        <!-- ── TARJETA 2: LOMO SALTADO ──
+             Imagen → img/platos/lomo-saltado.jpg -->
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.2s">
+          <img src="img/platos/lomosaltadoweb.png"
+               alt="Lomo Saltado"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1604908177522-5c2ed71ba13f?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Más pedido</span>
+            </div>
+            <h3 class="font-display text-crema text-2xl font-bold">Lomo Saltado</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Lomo fino salteado al wok con tomate, ají amarillo, sillao y papas fritas.</p>
+          </div>
+        </div>
+
+        <!-- ── TARJETA 3: CERDO AL CILINDRO ──
+             Imagen → img/platos/cerdoalcilindro.jpg -->
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.3s">
+          <img src="img/platos/cerdoalcilindro.jpg"
+               alt="Cerdo al cilindro"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Clásico peruano</span>
+            </div>
+            <h3 class="font-display text-crema text-2xl font-bold">Cerdo al cilindro</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Cocción lenta al cilindro, ahumado perfecto y sabor irresistible que convierte cada bocado en experiencia</p>
+          </div>
+        </div>
+
+         <!-- ── TARJETA 4: Pollo a la brasa -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/polloalabrasa.jpg"
+               alt="Pollo a la brasa"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Estrella de la casa</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Pollo a la brasa</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Pollo asado en brasas, sazonado con especias peruanas, papas fritas y ensalada</p>
+          </div>
+        </div>
+
+           <!-- ── TARJETA 5: Fetuchini con lomo saltado -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/Fetucchiniconlomo.png"
+               alt="Fetuchini con lomo saltado"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Más pedido</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Fetuchini con lomo saltado</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Fetuchini con lomo saltado, salsa de ají amarillo, queso parmesano y cebolla</p>
+          </div>
+        </div>
+
+        <!-- ── TARJETA 6: Anticuchos de corazón -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/chaufaamazonico.jpg"
+               alt="Chaufa amazónico con plátano frito"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Clásico peruano</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+             <h3 class="font-display text-crema text-2xl font-bold">Chaufa amazónico</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Arroz chaufa de inspiración amazónica, acompañado con plátano frito.</p>
+          </div>
+        </div>
+
+       <!-- ── TARJETA 7: Anticuchos de corazón -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/tallarinsaltado.png"
+               alt="Tallarín saltado peruano"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Clásico peruano</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Tallarín saltado</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Tallarines salteados al wok con vegetales y el sabor clásico peruano.</p>
+          </div>
+        </div>        
+
+       <!-- ── TARJETA 8: Anticuchos de corazón -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/jalea.jpeg"
+               alt="Jalea mixta con yuca frita y salsa criolla"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Clásico peruano</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Jalea mixta</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Jalea acompañada con yuca frita y salsa criolla.</p>
+          </div>
+        </div>
+
+       <!-- ── TARJETA 9: Anticuchos de corazón -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/sandwichdechicharron.jpg"
+               alt="Sándwich peruano de chicharrón"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Clásico peruano</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Sándwich de chicharrón</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Sándwich de chicharrón al estilo peruano.</p>
+          </div>
+        </div>
+        
+               <!-- ── TARJETA 10: Anticuchos de corazón -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/paparellena.jpeg"
+               alt="Papa rellena con carne molida"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Entrada peruana</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Papa rellena</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Papa rellena con carne molida</p>
+          </div>
+        </div>
+
+               <!-- ── TARJETA 11: Anticuchos de corazón -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/picarones.jpg"
+               alt="Picarones peruanos con miel"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Postre peruano</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Picarones</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Picarones servidos con miel.</p>
+          </div>
+        </div>
+
+               <!-- ── TARJETA 12: Anticuchos de corazón -->
+
+        <div class="dish-card relative rounded-2xl overflow-hidden shadow-lg group reveal" style="transition-delay:0.1s">
+          <img src="img/platos/alfajores.jpg"
+               alt="Alfajores rellenos de manjar blanco"
+               class="w-full h-72 object-cover"
+               onerror="this.src='https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'"
+               loading="lazy" />
+          <div class="overlay absolute inset-0 bg-gradient-to-t from-oscuro/95 via-oscuro/40 to-transparent opacity-80 flex flex-col justify-end p-6">
+            <div class="flex items-center gap-2 mb-1">
+              <div class="h-px w-6 bg-dorado"></div>
+              <span class="font-body text-dorado text-[10px] uppercase tracking-widest">Postre peruano</span>
+            </div>
+            <!-- Edita nombre y descripción aquí -->
+            <h3 class="font-display text-crema text-2xl font-bold">Alfajores</h3>
+            <p class="font-body text-crema/75 text-sm mt-1 leading-relaxed">Alfajores con relleno de manjar blanco</p>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       LA CARTA – Menú con precios
+       Edita nombres, descripciones y precios abajo
+       ════════════════════════════════════════════ -->
+  <section id="carta" class="relative py-24 px-5 lg:px-16 menu-showcase">
+
+    <div class="absolute inset-0 opacity-20"
+         style="background-image:url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23C9972B\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-10 reveal">
+        <span class="font-body text-dorado text-xs uppercase tracking-[0.3em] font-bold">Carta del restaurante</span>
+        <h2 class="font-display text-crema font-black text-4xl sm:text-5xl mt-2">La Carta</h2>
+        <hr class="gold-rule w-24 mt-6" />
+      </div>
+
+      <div class="grid gap-8 lg:grid-cols-1 items-start justify-items-center">
+        <div class="reveal">
+          <div class="menu-3d-card w-full max-w-4xl mx-auto rounded-[32px] p-6 sm:p-8">
+            <div class="text-center">
+              <h3 class="font-display text-crema text-4xl font-bold mt-2">Descubre el sabor del día</h3>
+              <div id="menu-tabs" class="flex justify-center flex-wrap gap-3 mt-6">
+                <button type="button" data-category-tab="0" data-index="0" class="menu-tab-btn active">Appetizers</button>
+                <button type="button" data-category-tab="1" data-index="1" class="menu-tab-btn">Sandwiches</button>
+                <button type="button" data-category-tab="2" data-index="2" class="menu-tab-btn">Entrees</button>
+                <button type="button" data-category-tab="3" data-index="3" class="menu-tab-btn">Main Dishes</button>
+                <button type="button" data-category-tab="4" data-index="4" class="menu-tab-btn">Noodles</button>
+                <button type="button" data-category-tab="5" data-index="5" class="menu-tab-btn">Desserts</button>
+                <button type="button" data-category-tab="6" data-index="6" class="menu-tab-btn">Drinks</button>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                <div class="w-full text-center">
+                  <h4 id="menu-category-title" class="font-display text-3xl font-bold mt-2"></h4>
+                  <p id="menu-category-hint" class="font-body text-crema/70 text-lg mt-2"></p>
+                </div>
+                <div class="flex items-center gap-2">
+                  <button type="button" data-nav="prev" class="menu-nav-btn" aria-label="Plato anterior">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                  </button>
+                  <button type="button" data-nav="next" class="menu-nav-btn" aria-label="Siguiente plato">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div id="menu-items" class="mt-6 grid gap-4 md:grid-cols-1"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal lg:translate-y-6 w-full max-w-4xl mx-auto">
+          <div class="menu-3d-panel rounded-[20px] p-6 sm:p-8 h-full bg-oscuro/90">
+            <h4 class="font-display text-2xl text-crema font-bold">Platos Recomendados</h4>
+            <ul class="mt-3 space-y-3">
+              <li class="menu-highlight-item"><span class="text-dorado">•</span> Lomo Saltado — Corte fino salteado</li>
+              <li class="menu-highlight-item"><span class="text-dorado">•</span> Pollo a la Brasa — Marinado tradicional</li>
+              <li class="menu-highlight-item"><span class="text-dorado">•</span> Ceviche Clásico — Frescura del mar</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Reservar + Carta PDF -->
+      <div class="text-center mt-14 reveal">
+        <p class="font-body text-crema/50 text-sm mb-6">¿Listo para vivir la experiencia?</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+          <a href="docs/carta-el-bitute-tres-web.pdf" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-3 border-2 border-dorado text-dorado hover:bg-dorado hover:text-tierra font-body font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105">
+            <!-- PDF icon -->
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17V7a2 2 0 012-2h6l2 2h4a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            </svg>
+            Ver nuestra carta
+          </a>
+
+          <!-- (Big modal button removed as requested) -->
+          <!-- Botón: Reservar WhatsApp -->
+          <a href="https://wa.me/12404912936?text=Hola!%20Quisiera%20hacer%20una%20reserva."
+             target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-3 bg-rojo hover:bg-red-700 text-white font-body font-bold uppercase tracking-widest text-sm px-8 py-4 rounded-2xl shadow-xl transition-all duration-300 hover:scale-105">
+            <svg class="w-5 h-5 fill-current flex-shrink-0" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Reservar por WhatsApp
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       LOCACIÓN Y CONTACTO
+       ════════════════════════════════════════════ -->
+  <section id="locacion" class="bg-crema py-24 px-5 lg:px-16">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14 reveal">
+        <span class="font-body text-rojo text-xs uppercase tracking-[0.3em] font-bold">Encuéntranos</span>
+        <h2 class="font-display text-tierra font-black text-4xl sm:text-5xl mt-2">Locación &amp; Contacto</h2>
+        <hr class="gold-rule w-24 mt-6" />
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+        <!-- Tarjeta de información -->
+        <div class="reveal">
+          <div class="bg-tierra rounded-2xl p-8 shadow-2xl text-crema relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-dorado/5"></div>
+            <div class="absolute -bottom-10 -left-10 w-56 h-56 rounded-full bg-rojo/5"></div>
+
+            <h3 class="font-display text-dorado text-2xl font-bold mb-8 relative z-10">Información del local</h3>
+
+            <div class="space-y-6 relative z-10">
+
+              <!-- Dirección -->
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-full bg-dorado/10 border border-dorado/30 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-body text-dorado text-xs uppercase tracking-widest font-bold mb-1">Dirección</p>
+                  <!-- Edita la dirección aquí -->
+                  <p class="font-body text-crema/85 leading-relaxed">23242 FM-1314<br/>Porter, TX 77365-3708<br/>United States</p>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-full bg-dorado/10 border border-dorado/30 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 fill-current text-dorado" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </div>
+                <div>
+                  <p class="font-body text-dorado text-xs uppercase tracking-widest font-bold mb-1">WhatsApp</p>
+                  <!-- Edita el número aquí -->
+                  <a href="https://wa.me/12404912936" target="_blank" rel="noopener noreferrer"
+                     class="font-body text-crema/85 hover:text-dorado transition-colors">+1 240-491-2936</a>
+                </div>
+              </div>
+
+              <!-- Horario -->
+              <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 rounded-full bg-dorado/10 border border-dorado/30 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-dorado" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="font-body text-dorado text-xs uppercase tracking-widest font-bold mb-1">Horario</p>
+                  <!-- Edita el horario aquí -->
+                  <p class="font-body text-crema/85 leading-relaxed">Lun – Vie: 11:00 am – 9:00 pm<br/>Sáb – Dom: 10:00 am – 10:00 pm</p>
+                </div>
+              </div>
+
+            </div>
+
+            <a href="https://wa.me/12404912936?text=Hola!%20Necesito%20información."
+               target="_blank" rel="noopener noreferrer"
+               class="mt-8 w-full flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white font-body font-bold text-sm py-3 rounded-xl transition-colors duration-300 relative z-10">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Contáctanos ahora
+            </a>
+          </div>
+        </div>
+
+        <!-- Mapa Google -->
+        <div class="reveal" style="transition-delay:0.15s">
+          <div class="rounded-2xl overflow-hidden shadow-2xl h-80 lg:h-full min-h-[340px] bg-marron/30 border border-dorado/20 relative">
+            <iframe
+              title="El Bitute Tres Porter – Ubicación"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.04789!2d-95.2897!3d30.0923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s23242+FM-1314%2C+Porter%2C+TX+77365!5e0!3m2!1sen!2sus!4v1"
+              width="100%" height="100%"
+              class="absolute inset-0 w-full h-full"
+              style="border:0; filter: sepia(40%) contrast(1.1);"
+              allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="absolute bottom-4 left-4 bg-tierra/90 text-crema text-xs font-body px-3 py-2 rounded-lg shadow-lg backdrop-blur z-10 pointer-events-none">
+              <span class="text-dorado font-bold">El Bitute Tres</span><br/>
+              23242 FM-1314, Porter TX
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════ -->
+   <footer class="bg-oscuro py-12 px-5 text-center">
+    <a href="#inicio" class="inline-block mb-4">
+      <span class="font-display text-dorado text-2xl font-bold tracking-wide">El Bitute Tres</span>
+    </a>
+    <p class="font-body text-crema/40 text-xs tracking-wider mb-6">23242 FM-1314 · Porter, TX 77365 · United States</p>
+
+    <!-- Íconos sociales con modales emergentes -->
+    <div class="flex justify-center gap-5 mb-8">
+
+      <!-- WhatsApp -->
+      <button onclick="openModal('modal-wa')" aria-label="WhatsApp"
+         class="w-9 h-9 rounded-full border border-crema/20 flex items-center justify-center text-crema/50 hover:border-green-400 hover:text-green-400 transition-colors cursor-pointer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </button>
+
+      <!-- Instagram -->
+      <button onclick="openModal('modal-ig')" aria-label="Instagram"
+         class="w-9 h-9 rounded-full border border-crema/20 flex items-center justify-center text-crema/50 hover:border-pink-400 hover:text-pink-400 transition-colors cursor-pointer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </button>
+
+      <!-- Facebook -->
+      <button onclick="openModal('modal-fb')" aria-label="Facebook"
+         class="w-9 h-9 rounded-full border border-crema/20 flex items-center justify-center text-crema/50 hover:border-blue-400 hover:text-blue-400 transition-colors cursor-pointer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </button>
+
+    </div>
+
+    <!-- ════════════════════════
+         MODALES REDES SOCIALES
+         ════════════════════════ -->
+
+    <!-- Modal WhatsApp -->
+    <div id="modal-wa" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center px-4 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-wa-title" aria-hidden="true">
+      <div class="modal-backdrop absolute inset-0 bg-oscuro/80 backdrop-blur-sm" onclick="closeModal('modal-wa')"></div>
+      <div class="modal-card relative bg-tierra border border-dorado/30 rounded-2xl p-8 max-w-sm w-full shadow-2xl text-center" style="animation: modalIn 0.3s ease">
+        <button type="button" onclick="closeModal('modal-wa')" aria-label="Cerrar WhatsApp" class="absolute top-4 right-4 text-crema/40 hover:text-crema transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <!-- Ícono -->
+        <div class="w-16 h-16 rounded-full bg-green-500/15 border border-green-500/40 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 fill-current text-green-400" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <h3 id="modal-wa-title" class="font-display text-crema text-xl font-bold mb-1">WhatsApp</h3>
+        <p class="font-body text-crema/50 text-sm mb-1">Contáctanos directamente</p>
+        <p class="font-body text-green-400 font-bold text-lg mb-6">+1 240-491-2936</p>
+        <div class="flex flex-col gap-3">
+          <a href="https://wa.me/12404912936?text=Hola!%20Quisiera%20hacer%20una%20reserva." target="_blank" rel="noopener noreferrer"
+             class="w-full bg-green-500 hover:bg-green-600 text-white font-body font-bold text-sm py-3 rounded-xl transition-colors">
+            Reservar una mesa
+          </a>
+          <a href="https://wa.me/12404912936?text=Hola!%20Quisiera%20consultar%20el%20menu." target="_blank" rel="noopener noreferrer"
+             class="w-full border border-green-500/50 text-green-400 hover:bg-green-500/10 font-body font-bold text-sm py-3 rounded-xl transition-colors">
+            Consultar el menú
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Instagram -->
+    <div id="modal-ig" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center px-4 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-ig-title" aria-hidden="true">
+      <div class="modal-backdrop absolute inset-0 bg-oscuro/80 backdrop-blur-sm" onclick="closeModal('modal-ig')"></div>
+      <div class="modal-card relative border border-dorado/30 rounded-2xl p-8 max-w-sm w-full shadow-2xl text-center" style="background: linear-gradient(145deg, #2D241E, #1A1210); animation: modalIn 0.3s ease">
+        <button type="button" onclick="closeModal('modal-ig')" aria-label="Cerrar Instagram" class="absolute top-4 right-4 text-crema/40 hover:text-crema transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <!-- Ícono degradado Instagram -->
+        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style="background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); padding:2px;">
+          <div class="w-full h-full rounded-full bg-tierra flex items-center justify-center">
+            <svg class="w-8 h-8 fill-current text-pink-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </div>
+        </div>
+        <h3 id="modal-ig-title" class="font-display text-crema text-xl font-bold mb-1">Instagram</h3>
+        <p class="font-body text-crema/50 text-sm mb-1">Síguenos y mira nuestros platos</p>
+        <p class="font-body text-pink-400 font-bold text-base mb-6">@elbitute3porter</p>
+        <a href="https://www.instagram.com/elbitute3porter" target="_blank" rel="noopener noreferrer"
+           class="w-full inline-block text-white font-body font-bold text-sm py-3 rounded-xl transition-opacity hover:opacity-90"
+           style="background: linear-gradient(90deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888)">
+          Ver perfil en Instagram
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal Facebook -->
+    <div id="modal-fb" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center px-4 hidden" role="dialog" aria-modal="true" aria-labelledby="modal-fb-title" aria-hidden="true">
+      <div class="modal-backdrop absolute inset-0 bg-oscuro/80 backdrop-blur-sm" onclick="closeModal('modal-fb')"></div>
+      <div class="modal-card relative bg-tierra border border-dorado/30 rounded-2xl p-8 max-w-sm w-full shadow-2xl text-center" style="animation: modalIn 0.3s ease">
+        <button type="button" onclick="closeModal('modal-fb')" aria-label="Cerrar Facebook" class="absolute top-4 right-4 text-crema/40 hover:text-crema transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <!-- Ícono -->
+        <div class="w-16 h-16 rounded-full bg-blue-500/15 border border-blue-500/40 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 fill-current text-blue-400" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </div>
+        <h3 id="modal-fb-title" class="font-display text-crema text-xl font-bold mb-1">Facebook</h3>
+        <p class="font-body text-crema/50 text-sm mb-1">Síguenos en Facebook</p>
+        <p class="font-body text-blue-400 font-bold text-base mb-6">El Bitute Tres Porter</p>
+        <a href="https://www.facebook.com/elbitute3porter?locale=es_LA" target="_blank" rel="noopener noreferrer"
+           class="w-full inline-block bg-blue-600 hover:bg-blue-700 text-white font-body font-bold text-sm py-3 rounded-xl transition-colors">
+          Ver página en Facebook
+        </a>
+      </div>
+    </div>
+
+    <hr class="border-crema/10 max-w-xs mx-auto mb-6" />
+    <p class="font-body text-crema/30 text-xs">
+      &copy; <span id="yr"></span> El Bitute Tres Porter &middot; Todos los derechos reservados.
+    </p>
+  </footer>
+
+  <!-- ══ JAVASCRIPT PRINCIPAL ══ -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>
